@@ -1,0 +1,34 @@
+-- Enable the uuid-ossp extension if not already enabled
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Create the table
+CREATE TABLE i3l_botmaster (
+    taskId UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    createdAt DATE DEFAULT CURRENT_DATE NOT NULL,
+    useCaseName VARCHAR(200) NOT NULL,
+    taskName VARCHAR(500) NOT NULL,
+    department VARCHAR(200) NOT NULL,
+    processTrack VARCHAR(100) NOT NULL,
+    goLiveAt DATE,
+    updatedAt TIMESTAMP,
+    isActive VARCHAR(20) DEFAULT 'yes' NOT NULL
+);
+
+
+
+INSERT INTO i3l_botmaster (
+    taskId, createdAt, useCaseName, taskName, department, processTrack, goLiveAt, updatedAt, isActive
+) VALUES
+    ('2b50b7a3-f28e-4b2a-b6cd-d9d310c98301', '2025-06-01', 'Invoice Processing', 'Extract and archive invoices', 'Finance', 'Automated', '2025-06-05', '2025-06-06 10:00:00', 'yes'),
+    ('3d26a5ef-bbaf-4d72-b8f2-14f6ef345c9f', '2025-06-02', 'Employee Onboarding', 'Create AD and email account', 'HR', 'Semi-Automated', '2025-06-07', '2025-06-08 14:22:00', 'yes'),
+    ('4fd7b3a0-7a3e-4cb1-904d-d8ae4455d880', '2025-06-03', 'IT Asset Management', 'Monitor hardware assignments', 'IT', 'Automated', '2025-06-10', NULL, 'yes'),
+    ('6f1d6f61-801e-4efb-a1f3-ea828f388671', '2025-06-04', 'Ticket Escalation', 'Route tickets to L2 support', 'IT', 'Manual', NULL, NULL, 'no'),
+    ('7a14e1fa-48d3-4aa7-8894-d8d5dbfa1091', '2025-06-04', 'Leave Management', 'Notify manager on leave request', 'HR', 'Automated', '2025-06-09', '2025-06-10 11:30:00', 'yes'),
+    ('8e9d21d0-2f52-4326-b7aa-893b3328cbf6', '2025-06-05', 'Payroll Automation', 'Disburse salaries via SFTP', 'Finance', 'Automated', '2025-06-15', '2025-06-16 09:00:00', 'yes'),
+    ('99b84a5d-5041-4fd8-9480-07f50d12622f', '2025-06-05', 'Timesheet Reminder', 'Send daily timesheet emails', 'HR', 'Semi-Automated', NULL, NULL, 'yes'),
+    ('a6e00349-20e6-4d7f-983a-3186e89640c9', '2025-06-06', 'Procurement Requests', 'Approve PO via email', 'Procurement', 'Automated', '2025-06-12', '2025-06-13 08:30:00', 'yes'),
+    ('b3dc9020-f3e4-4d85-9d71-03dbb228fcee', '2025-06-06', 'Compliance Reporting', 'Generate monthly audit reports', 'Audit', 'Manual', NULL, NULL, 'no'),
+    ('cbf8f914-42e5-4a78-a1ee-4d1cf7a48210', '2025-06-07', 'User Access Review', 'Compile and validate access data', 'Security', 'Semi-Automated', '2025-06-14', NULL, 'yes');
+
+
+select * from i3l_botmaster;
