@@ -31,4 +31,4 @@ INSERT INTO i3l_botmaster (
     ('cbf8f914-42e5-4a78-a1ee-4d1cf7a48210', '2025-06-07', 'User Access Review', 'Compile and validate access data', 'Security', 'Semi-Automated', '2025-06-14', NULL, 'yes');
 
 
-select * from i3l_botmaster;
+SELECT * FROM i3l_botmaster;
