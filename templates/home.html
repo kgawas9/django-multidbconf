@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>BOT Details.</h2>
+
+    <table border="1">
+    <tr>
+        <th>Task ID</th>
+        <th>Created At</th>
+        <th>Use Case</th>
+        <th>Task Name</th>
+        <th>Department</th>
+        <th>Process Track</th>
+        <th>Go Live At</th>
+        <th>Updated At</th>
+        <th>Is Active</th>
+    </tr>
+    {% for entry in entries %}
+    <tr>
+        <td>{{ entry.taskId }}</td>
+        <td>{{ entry.createdAt }}</td>
+        <td>{{ entry.useCaseName }}</td>
+        <td>{{ entry.taskName }}</td>
+        <td>{{ entry.department }}</td>
+        <td>{{ entry.processTrack }}</td>
+        <td>{{ entry.goLiveAt }}</td>
+        <td>{{ entry.updatedAt }}</td>
+        <td>{{ entry.isActive }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
